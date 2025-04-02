@@ -5,11 +5,12 @@
 ---@type LazySpec
 return {
   "AstroNvim/astrocommunity",
+  -- INFO: add obsidian, idk why I installed it manuually xD
+  { import = "astrocommunity.note-taking.obsidian-nvim" },
   -- INFO: I love the telescope mappings so yeah ~
   { import = "astrocommunity.recipes.telescope-lsp-mappings" },
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.go" },
   { import = "astrocommunity.pack.python" },
   { import = "astrocommunity.pack.docker" },
-  -- import/override with your plugins folder
 }
