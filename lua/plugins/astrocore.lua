@@ -10,7 +10,7 @@ return {
   opts = {
     -- Configure core features of AstroNvim
     features = {
-      large_buf = { size = 1024 * 256, lines = 10000 }, -- set global limits for large files for disabling features like treesitter
+      large_buf = { size = 1024 * 1024, lines = 10000 }, -- set global limits for large files for disabling features like treesitter
       autopairs = true, -- enable autopairs at start
       cmp = true, -- enable completion at start
       diagnostics = { virtual_text = true, virtual_lines = false }, -- diagnostic settings on startup
@@ -48,6 +48,9 @@ return {
         ["]b"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
         ["[b"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
 
+        -- INFO: I'm used to this so I'm adding it back xD
+        L = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
+        H = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
         -- mappings seen under group name "Buffer"
         ["<Leader>bd"] = {
           function()
@@ -64,8 +67,27 @@ return {
         ["<Leader>h"] = false,
         -- ["<Leader>b"] = { desc = "Buffers" },
 
+        ["gs"] = {
+          function() require("snacks").picker.spelling() end,
+          desc = "Toggle spelling suggestion (snacks)",
+          nowait = true,
+        },
+
         -- setting a mapping to false will disable it
         -- ["<C-S>"] = false,
+        ["<Leader>i"] = {
+          function()
+            local aerial_avail, aerial = pcall(require, "aerial")
+            if aerial_avail and aerial.snacks_picker then
+              print "using aerial"
+              aerial.snacks_picker()
+            else
+              print "using snacks (goat)"
+              require("snacks").picker.lsp_symbols()
+            end
+          end,
+          desc = "Search symbols",
+        },
       },
     },
   },
