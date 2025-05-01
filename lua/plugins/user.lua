@@ -5,15 +5,6 @@
 ---@type LazySpec
 return {
 
-  -- == Examples of Adding Plugins ==
-
-  "andweeb/presence.nvim",
-  {
-    "ray-x/lsp_signature.nvim",
-    event = "BufRead",
-    config = function() require("lsp_signature").setup() end,
-  },
-
   -- == Examples of Overriding Plugins ==
 
   -- customize dashboard options
@@ -41,6 +32,13 @@ return {
 
   -- You can disable default plugins as follows:
   { "max397574/better-escape.nvim", enabled = true },
+
+  -- INFO: adding back the lsp_signature feature, that I though part of presence.nvim xD
+  {
+    "ray-x/lsp_signature.nvim",
+    event = "BufRead",
+    config = function() require("lsp_signature").setup() end,
+  },
 
   -- You can also easily customize additional setup of plugins that is outside of the plugin's setup call
   {

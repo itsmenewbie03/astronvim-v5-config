@@ -78,6 +78,19 @@ return {
     -- mappings to be set up on attaching of a language server
     mappings = {
       n = {
+        -- INFO: my sigma mappings
+        ["gd"] = {
+          function() require("snacks").picker.lsp_definitions() end,
+          desc = "Show the definition of current symbol (snacks)",
+          nowait = true,
+        },
+
+        ["gr"] = {
+          function() require("snacks").picker.lsp_references() end,
+          desc = "Search references (snacks)",
+          nowait = true,
+        },
+
         -- a `cond` key can provided as the string of a server capability to be required to attach, or a function with `client` and `bufnr` parameters from the `on_attach` that returns a boolean
         gD = {
           function() vim.lsp.buf.declaration() end,

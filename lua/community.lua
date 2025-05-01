@@ -13,4 +13,5 @@ return {
   { import = "astrocommunity.pack.go" },
   { import = "astrocommunity.pack.python" },
   { import = "astrocommunity.pack.docker" },
+  { import = "astrocommunity.pack.typescript" },
 }
