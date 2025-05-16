@@ -12,6 +12,9 @@ return {
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.go" },
   { import = "astrocommunity.pack.python" },
+  { import = "astrocommunity.pack.php" },
   { import = "astrocommunity.pack.docker" },
+  { import = "astrocommunity.file-explorer.oil-nvim" },
+  { import = "astrocommunity.pack.laravel" },
   { import = "astrocommunity.pack.typescript" },
 }
