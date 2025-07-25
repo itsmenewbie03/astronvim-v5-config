@@ -15,6 +15,8 @@ return {
   { import = "astrocommunity.pack.php" },
   { import = "astrocommunity.pack.blade" },
   { import = "astrocommunity.pack.docker" },
+  { import = "astrocommunity.pack.templ" },
+  { import = "astrocommunity.pack.helm" },
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.file-explorer.oil-nvim" },
   { import = "astrocommunity.pack.laravel" },
