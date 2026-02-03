@@ -14,6 +14,13 @@
 --     ["~/%.config/foo/.*"] = "fooscript",
 --   },
 -- }
+--
+
+vim.filetype.add {
+  extension = {
+    tf = "terraform",
+  },
+}
 
 -- INFO: using mouse while coding is gay
 vim.o.mouse = ""
